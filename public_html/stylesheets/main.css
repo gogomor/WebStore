@@ -1,0 +1,485 @@
+* {
+    margin: 0;
+}
+
+
+html, body {
+    background-color: rgba(210, 215, 103, 1);
+    height: 100%;
+
+}
+.page-wrap {
+  min-height: 100%;
+  /* equal to footer height */
+    margin-bottom: -70px; 
+}
+.page-wrap:after {
+  content: "";
+  display: block;
+}
+.site-footer, .page-wrap:after {
+  /* .push must be the same height as footer */
+    height: 70px; 
+}
+.site-footer{
+    text-align: center;
+    background-color: cornsilk;
+}
+#header {
+    padding:0;
+    background-color: cornsilk;
+    height: 50px;
+
+}
+/*#footer {
+    margin-top:30px;
+    text-align: center;
+    left:0;
+    width:100%;
+    bottom:0;
+    background-color: cornsilk;
+    height:30px;
+}*/
+
+#header form {
+    float:right;
+}
+#suma {
+    margin-top: 12px;
+
+}
+
+#kategorije, #divListaProizvoda{
+    height: 180px;
+    border: 5px solid rgba(242, 146, 86, 0.91);
+    border-radius: 30px;
+    margin:0 auto;
+    width:1200px;
+    background-color: white;
+    text-align: center;
+    margin-top:10px;
+ }
+#subheader {
+    height: 120px;
+    margin:0 auto;
+    width:1200px;
+    border:1px solid gray;
+    background-position: center;
+    background-image: url('../images/subheader.jpg');
+    margin-top: 20px;
+
+
+}
+#subheader img{
+    display: inline;
+    float:left;
+}
+#subheader form{
+    margin-top: 50px;
+    margin-right: 30px;
+    display: inline;
+    float:right;
+      
+}
+#subheader h1 {
+    display: inline-block;
+    margin-left: 320px;
+    font-family: 'Abril Fatface', cursive;
+    font-size: 50px;
+    color:#EECC54;
+    background:white;
+    border-radius: 40px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border: 3px solid rgba(242, 146, 86, 0.91);
+
+}
+
+#kategorije li{
+    display: inline;
+    margin:10px;
+
+}
+#kategorije div {
+    margin-top:0;
+    display:inline-block;
+    width:160px;
+}
+#kategorije img {
+    
+}
+#kategorije a{
+    color:black;
+}
+#kategorije a:hover{
+    color:darkorange;
+    text-shadow: 2px 2px 8px gold;  
+
+}
+#kategorije p{
+    font-family: cursive;
+    font-size:18px;
+    margin-top: 0;
+}
+ul {
+    padding-left: 0;
+    padding-top:0;
+    margin-top:0;
+}
+#formLogin, #formRegistracija, #formNarudzbenica {
+
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+    width:20%;
+    margin: 0 auto;
+    margin-top: 80px;
+
+
+}
+#formLogin input[type=text],#formLogin input[type=password],#formRegistracija input[type=text],
+#formRegistracija input[type=password],#formNarudzbenica input[type=text],#formNarudzbenica input[type=date] {
+    width: 100%;
+    padding: 10px 18px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 20px;
+}
+
+#formLogin input[type=submit],#formRegistracija input[type=submit], #formNarudzbenica input[type=submit] {
+    width: 50%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 18px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 20px;
+}
+#formNarudzbenica textarea{
+    width: 100%;
+}
+
+#formLogin input[type=submit]:hover, #formRegistracija input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+#formRegistracija {
+    width:400px;
+}
+td{
+    text-align: left;
+    padding-left: 30px;
+}
+
+
+h3,h2 {
+    text-align: center;
+}
+#divListaProizvoda {
+
+    min-height: 800px;
+    margin-top:20px;
+    padding-top: 10px;
+    padding-bottom: 50px;
+    margin-bottom: 20px;
+    
+}
+#divProizvod {
+    width:250px;
+    float: left; 
+    margin-left: 35px;
+    margin-bottom: 30px;
+    margin-top: 30px;
+    text-align:center;
+    font-family: 'Arima Madurai', cursive;
+    font-size: 18px;
+    border-radius: 50%;
+    transition: all 1s;
+    
+}
+#divProizvod img{
+    transition: .6s;
+}
+#divProizvod img:hover {
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+}
+#divPaginacija {
+    clear:both;
+    width:200px;
+    margin:0 auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    text-align: center;
+    background:white;
+    border: 2px solid orange;
+    font-size: 20px;
+    
+}
+#divPaginacija a{
+    margin-left:5px;
+
+    text-decoration: none;
+    
+}
+#divPaginacija span{
+    
+
+}
+.izabrani {
+    color:red;
+}
+
+ 
+#prikazProizvoda {
+    width:30%;
+    height: 55%;
+    display: block;
+    margin:0 auto;
+    margin-top: 80px;
+    border-radius: 50px;
+    border: 5px solid rgba(242, 146, 86, 0.91);
+    text-align: center;
+    padding-top: 50px;
+    font-family: "Happy Monkey", serif;
+    font-weight: bold;
+    background: white;
+    padding-bottom: 30px;
+}
+
+#header input {
+    margin-right: 5px;
+}
+#kupovinaProizvoda input{
+    width:100px;
+    height: 30px;
+    text-align: center;
+    margin-left:10px;
+    margin-right: 10px;
+}
+
+
+#divkorpa {
+    display: inline-block;
+    float:left;
+    width:170px;
+    height: 50px;
+    background:white;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    border-right: 1px solid gray;
+}
+#divkorpa img{
+    float:left;
+    width:50px;
+    height: 50px;
+}
+#divkorpa p {
+    text-align: center;
+    display: inline-block;
+    color:black;
+    font-family: "Happy Monkey", serif;
+    font-size: 20px;
+}
+#pretraga {
+    width:150px;
+    height: 30px;
+    margin-right: 20px;
+    border: 2px solid rgba(242, 146, 86, 0.91);
+    border-radius: 10px;
+    font-family: 'Happy Monkey', cursive;
+    font-size: 20px;
+    padding-left: 10px;
+}
+#btnpretraga {
+    height: 35px;
+    width: 50px;
+}
+#pretraga:focus{
+    outline: none;
+}
+
+#tblKorpa {
+    border-collapse: collapse;
+    width: 50%;
+    margin:0 auto;
+    margin-top: 100px;
+    background: white;
+    margin-bottom: 50px;
+}
+
+#tblKorpa th, #tblKorpa td {
+    text-align: left;
+    padding: 8px;
+}
+
+#tblKorpa tr:nth-child(even){background-color: #f2f2f2}
+
+#tblKorpa th {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.divNarudzbenica {
+    margin-top:100px;
+}
+
+.divNarudzbenica table{
+    margin:0 auto;
+}
+.divKorpaTabela {
+    margin: 0 auto;
+}
+.divKorpaTabela .malo_i{
+    color: #ff6863;
+}
+.divKorpaTabela input {
+    display:block;
+    margin:0 auto;
+    margin-bottom: 400px;
+}
+.divKorpaTabela img{
+    width:40px;
+    height: 40px;
+}
+.submitNar{
+    display: block;
+    margin: 0 auto;
+}
+.hidden {
+    visibility: hidden;
+}
+
+
+
+
+
+
+
+/*DUGME*/
+
+#prikaziSve , #header input, .dugme{
+    display: block;
+    margin:0 auto;
+    margin-top:20px;
+    width:120px;
+    height: 30px;
+
+    -moz-box-shadow:inset 0px 1px 0px 0px #a4e271;
+    -webkit-box-shadow:inset 0px 1px 0px 0px #a4e271;
+    box-shadow:inset 0px 1px 0px 0px #a4e271;
+    background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #89c403), color-stop(1, #77a809));
+    background:-moz-linear-gradient(top, #89c403 5%, #77a809 100%);
+    background:-webkit-linear-gradient(top, #89c403 5%, #77a809 100%);
+    background:-o-linear-gradient(top, #89c403 5%, #77a809 100%);
+    background:-ms-linear-gradient(top, #89c403 5%, #77a809 100%);
+    background:linear-gradient(to bottom, #89c403 5%, #77a809 100%);
+    
+    background-color:#89c403;
+    -moz-border-radius:6px;
+    -webkit-border-radius:6px;
+    border-radius:6px;
+    border:1px solid #74b807;
+    cursor:pointer;
+    color:#ffffff;
+    font-family:Arial;
+    font-size:15px;
+    font-weight:bold;
+    padding:6px 24px;
+    text-decoration:none;
+    text-shadow:0px 1px 0px #528009;
+}
+#prikaziSve:hover, #header input:hover, .dugme:hover {
+    background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #77a809), color-stop(1, #89c403));
+    background:-moz-linear-gradient(top, #77a809 5%, #89c403 100%);
+    background:-webkit-linear-gradient(top, #77a809 5%, #89c403 100%);
+    background:-o-linear-gradient(top, #77a809 5%, #89c403 100%);
+    background:-ms-linear-gradient(top, #77a809 5%, #89c403 100%);
+    background:linear-gradient(to bottom, #77a809 5%, #89c403 100%);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#77a809', endColorstr='#89c403',GradientType=0);
+    background-color:#77a809;
+}
+#prikaziSve:active ,#header input:active , .dugme:active{
+    position:relative;
+    top:1px;
+}
+
+.malo_i{
+    color:orange;
+}
+#uKorpu {
+    font-size: 35px;
+    padding: 10px;
+    padding-top: 15px;
+    font-size: 40;
+    border:2px solid lightgray;
+    border-radius: 30px;
+}
+
+
+
+
+.headerLista li a {
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 12px 14px;
+     text-decoration: none;
+     font-family: 'Arima Madurai', cursive;
+    
+}
+.headerLista {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    text-decoration: none;
+
+    
+    
+}
+.headerLista li {
+    float: right;
+    
+    /*Abril+Fatface
+    Happy+Monkey
+    Arima+Madurai*/
+
+}
+
+
+
+/* Change the link color to #111 (black) on hover */
+.headerLista li a:hover {
+    background-color: #89c403;
+    color:white;
+
+}
+
+.error {
+    display: block;
+    width: 20%;
+    background-color: white;
+    margin:0 auto;
+    margin-top: 40px;
+    padding: 30px;
+    border:1px solid gray;
+    border-radius: 5px;
+    font-family: "Happy Monkey", serif;
+
+}
+.error ul li {
+    
+    color:red;
+}
+
+.red_input {
+    color:#ff6863;
+    
+}
