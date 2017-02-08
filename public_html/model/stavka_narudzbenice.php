@@ -2,7 +2,6 @@
 class StavkaNarudzbenice implements DomenskiObjekat
 {
 
-	public $rb_stavke;
 	public $id_narudzbenice;
 	public $proizvod;
 	public $kolicina;
@@ -25,9 +24,8 @@ class StavkaNarudzbenice implements DomenskiObjekat
 
     }
 
-    public function __construct4($rb, $proizvod, $kol, $iznos)
+    public function __construct3($proizvod, $kol, $iznos)
     {
-        $this->rb_stavke  = $rb;
         $this->proizvod   = $proizvod;
         $this->kolicina   = $kol;
         $this->iznos      = $iznos;
@@ -68,7 +66,7 @@ class StavkaNarudzbenice implements DomenskiObjekat
       
     }
      public function vrati_vrednosti_za_insert(){
-      return $this->rb_stavke . " ," . $this->id_narudzbenice . " ," . $this->proizvod->id . " ," . $this->kolicina . " ," . 
+      return $this->id_narudzbenice . " ," . $this->proizvod->id . " ," . $this->kolicina . " ," . 
       $this->iznos;
     }
 

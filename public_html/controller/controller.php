@@ -47,6 +47,11 @@ class Controller {
     public function vrati_sve(DomenskiObjekat $do) {
         return $this->db->vrati_sve($do);      
     }
+    public function vrati_narudzbenice_korisnika($id){
+        $n = new Narudzbenica();
+        $n->postavi_uslov_za_nadji_slogove($id);
+        $this->db->vrati_objekte($n);
+    }
     public function prebroj_sve_u_kategoriji($kategorija){
         return $this->db->prebroj_sve_u_kategoriji($kategorija);
     } 
@@ -72,6 +77,7 @@ class Controller {
     public function esc($arr){
         return $this->db->esc($arr);
     }
+    //povecaj broj logovanja korisnika
     public function num_log($id){
         return $this->db->num_log($id);
     }

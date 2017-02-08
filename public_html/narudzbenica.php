@@ -43,13 +43,10 @@ $ukupan_iznos = 0;
         $user_id = $session->user_id;
 
         $narudzbenica = new Narudzbenica($user_id, $_SESSION['stavke'],$adresa, $datum, $ukupan_iznos,$napomena);
-        
-        
+             
         $max_id = $kon->vrati_poslednji_id($narudzbenica);
         $narudzbenica->id_narudzbenice = $max_id + 1;
-        $narudzbenica->napuni_stavke_sa_id_narudzbenice();
-        $narudzbenica->napuni_stavke_sa_rb();
-        
+        $narudzbenica->napuni_stavke_sa_id_narudzbenice();    
 
         $poruka = $kon->sacuvaj_slog($narudzbenica);
         if($poruka){ 

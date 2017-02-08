@@ -40,6 +40,7 @@
         <li><a href="logout.php">Odjava</a></li>
         <li><a href="index.php">Proizvodi</a></li>
         <li><a href="korpa.php">Korpa</a></li>
+        <li><a href="narudzbenice_korisnika.php">Moje Porudžbine</a></li>
         <?php } ?>
     </ul>
 </div>

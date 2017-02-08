@@ -51,6 +51,7 @@ class Narudzbenica implements DomenskiObjekat {
     }
     public function postavi_uslov_za_nadji_slogove($uslov)
     {
+        $this->uslov = $uslov;
     }
     public function postavi_uslov_za_prebroj_sve($uslov)
     {
@@ -77,14 +78,7 @@ class Narudzbenica implements DomenskiObjekat {
     		$stavka->id_narudzbenice = $this->id_narudzbenice;
     	}
     }
-    public function napuni_stavke_sa_rb(){
-    	for($i = 0; $i < count($this->stavke); $i++){
-    		$this->stavke[$i]->rb_stavke = $i+1;
-    	}
-    	
-    	
-
-    }
+    
 }
 
 
