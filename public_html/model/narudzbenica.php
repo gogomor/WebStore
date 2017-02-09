@@ -2,7 +2,7 @@
 class Narudzbenica implements DomenskiObjekat {
 
 	public $id;
-	public $id_korisnik;
+	public $id_korisnika;
 	public $stavke = array();
 	public $adresa;
 	public $datum_isporuke;
@@ -23,7 +23,7 @@ class Narudzbenica implements DomenskiObjekat {
         }
     }
     public function __construct6($id_kor, $stavke, $adresa, $datum, $iznos, $napomena){
-    	$this->id_korisnik = $id_kor;
+    	$this->id_korisnika = $id_kor;
     	$this->stavke = $stavke;
     	$this->adresa = $adresa;
     	$this->datum_isporuke = $datum;
@@ -37,11 +37,25 @@ class Narudzbenica implements DomenskiObjekat {
 		return 'narudzbenica';
 	}
     public function napuni_objekte($result_set){
+        $objekti = array();
+        while ($row = mysqli_fetch_assoc($result_set)) {
+            
+            $id             = $row['id'];
+            $id_korisnika   = $row['id_korisnika'];
+            $adresa         = $row['adresa'];
+            $datum_isporuke = date("d.m.y", (strtotime($row['datum_isporuke'])));
+            $ukupan_iznos   = $row['ukupan_iznos'];
+            $napomena       = $row['napomena'];
 
+            $obj = new Narudzbenica($id, $id_korisnika, $adresa, $datum_isporuke, $ukupan_iznos, $napomena);
+            array_push($objekti, $obj);
+        }
+        return $objekti;
     }
     public function vrati_uslov_za_nadji_slog(){
     }
     public function vrati_uslov_za_nadji_slogove(){
+        return $this->uslov;
     }
     public function vrati_uslov_za_prebroj_sve(){
       
@@ -51,7 +65,7 @@ class Narudzbenica implements DomenskiObjekat {
     }
     public function postavi_uslov_za_nadji_slogove($uslov)
     {
-        $this->uslov = $uslov;
+        $this->uslov = "id_korisnika = {$uslov}";
     }
     public function postavi_uslov_za_prebroj_sve($uslov)
     {
@@ -70,7 +84,7 @@ class Narudzbenica implements DomenskiObjekat {
       return "(id, id_korisnika, adresa, datum_isporuke, ukupan_iznos, napomena)";
     }
      public function vrati_vrednosti_za_insert(){
-      return "NULL" . " ," . $this->id_korisnik . " ,'" . $this->adresa . "' ,'" . $this->datum_isporuke . "' ," . 
+      return "NULL" . " ," . $this->id_korisnika . " ,'" . $this->adresa . "' ,'" . $this->datum_isporuke . "' ," . 
       $this->ukupan_iznos . ", '" . $this->napomena . "'";
     }
     public function napuni_stavke_sa_id_narudzbenice() {

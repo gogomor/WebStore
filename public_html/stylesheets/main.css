@@ -305,7 +305,7 @@ h3,h2 {
     outline: none;
 }
 
-#tblKorpa {
+#tblKorpa, .tblNarudzbenice {
     border-collapse: collapse;
     width: 50%;
     margin:0 auto;
@@ -314,14 +314,14 @@ h3,h2 {
     margin-bottom: 50px;
 }
 
-#tblKorpa th, #tblKorpa td {
+#tblKorpa th, #tblKorpa td, .tblNarudzbenice th, .tblNarudzbenice td {
     text-align: left;
     padding: 8px;
 }
 
-#tblKorpa tr:nth-child(even){background-color: #f2f2f2}
+#tblKorpa tr, .tblNarudzbenice tr:nth-child(even){background-color: #f2f2f2}
 
-#tblKorpa th {
+#tblKorpa th, .tblNarudzbenice th {
     background-color: #4CAF50;
     color: white;
 }
@@ -344,7 +344,7 @@ h3,h2 {
     margin:0 auto;
     margin-bottom: 400px;
 }
-.divKorpaTabela img{
+.divKorpaTabela img, .tblNarudzbenice img{
     width:40px;
     height: 40px;
 }

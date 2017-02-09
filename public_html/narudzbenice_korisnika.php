@@ -9,11 +9,29 @@ if(!$session->is_logged_in()){
 }
 
 $kon = Controller::getInstance();
-
+$narudzbenice = $kon->vrati_narudzbenice_korisnika($session->user_id);
 
 ?>
+<div class="divTblNarudzbenice">
+	<table class="tblNarudzbenice">
+		<th>Datum isporuke</th>
+		<th>Ukupan iznos</th>
+		<th>Napomena</th>
+		<th>Proizvodi</th>
+		<?php foreach ($narudzbenice as $nar) { ?>
+				
+		<tr>
+			<td><?php echo $nar->datum_isporuke ?></td>
+			<td><?php echo $nar->ukupan_iznos ?> .din</td>
+			<td><?php echo $nar->napomena ?></td>
+			<td><a href="narudzbenice_korisnika?id=<?php echo $nar->id_korisnika; ?>">
+					<img src="images/korpa2.png">
+				</a></td>
 
-
+		</tr>
+		<?php } ?>
+	</table>
+</div>
 
 
 

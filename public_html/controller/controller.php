@@ -50,7 +50,7 @@ class Controller {
     public function vrati_narudzbenice_korisnika($id){
         $n = new Narudzbenica();
         $n->postavi_uslov_za_nadji_slogove($id);
-        $this->db->vrati_objekte($n);
+        return $this->db->vrati_objekte($n);
     }
     public function prebroj_sve_u_kategoriji($kategorija){
         return $this->db->prebroj_sve_u_kategoriji($kategorija);
