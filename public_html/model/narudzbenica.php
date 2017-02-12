@@ -43,7 +43,7 @@ class Narudzbenica implements DomenskiObjekat {
             $id             = $row['id'];
             $id_korisnika   = $row['id_korisnika'];
             $adresa         = $row['adresa'];
-            $datum_isporuke = date("d.m.y", (strtotime($row['datum_isporuke'])));
+            $datum_isporuke = date("d.m.Y", (strtotime($row['datum_isporuke'])));
             $ukupan_iznos   = $row['ukupan_iznos'];
             $napomena       = $row['napomena'];
 
@@ -53,6 +53,7 @@ class Narudzbenica implements DomenskiObjekat {
         return $objekti;
     }
     public function vrati_uslov_za_nadji_slog(){
+        return $this->uslov;
     }
     public function vrati_uslov_za_nadji_slogove(){
         return $this->uslov;
@@ -62,6 +63,7 @@ class Narudzbenica implements DomenskiObjekat {
     }
     public function postavi_uslov_za_nadji_slog($uslov)
     {
+        $this->uslov = $uslov;
     }
     public function postavi_uslov_za_nadji_slogove($uslov)
     {
@@ -89,7 +91,8 @@ class Narudzbenica implements DomenskiObjekat {
     }
     public function napuni_stavke_sa_id_narudzbenice() {
     	foreach ($this->stavke as $stavka) {
-    		$stavka->id_narudzbenice = $this->id_narudzbenice;
+    		$stavka->id_narudzbenice = $this->id;
+
     	}
     }
     

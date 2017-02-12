@@ -20,6 +20,9 @@ $ukupan_iznos = 0;
         if($time<(time()-60*60*24)){
             $errors['datum_istekao'] = "Datum koji ste ukucali je istekao.";
         }
+    }
+    if(empty($_POST['napomena'])){
+        $_POST['napomena']= "Nema napomene";
     } 
 
     if(empty($_SESSION['stavke'])) $errors['stavke'] = "Korpa je prazna";
@@ -45,8 +48,9 @@ $ukupan_iznos = 0;
         $narudzbenica = new Narudzbenica($user_id, $_SESSION['stavke'],$adresa, $datum, $ukupan_iznos,$napomena);
              
         $max_id = $kon->vrati_poslednji_id($narudzbenica);
-        $narudzbenica->id_narudzbenice = $max_id + 1;
-        $narudzbenica->napuni_stavke_sa_id_narudzbenice();    
+        $narudzbenica->id = $max_id + 1;
+        $narudzbenica->napuni_stavke_sa_id_narudzbenice();  
+          
 
         $poruka = $kon->sacuvaj_slog($narudzbenica);
         if($poruka){ 
@@ -59,9 +63,10 @@ $ukupan_iznos = 0;
 
 <?php include 'layouts/header.php';?>
 
+
 <div class="divNarudzbenica">
 
-    <form id="formNarudzbenica" action="narudzbenica.php" method="post">
+    <form class="formNarudzbenica" action="narudzbenica.php" method="post">
     <h3>NARUDŽBENICA</h3><br>
     <hr><br>
         <label for="adresa">Adresa za dostavu:</label>

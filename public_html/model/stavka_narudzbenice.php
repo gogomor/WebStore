@@ -24,9 +24,10 @@ class StavkaNarudzbenice implements DomenskiObjekat
 
     }
 
-    public function __construct3($proizvod, $kol, $iznos)
-    {
-        $this->proizvod   = $proizvod;
+    public function __construct4($id_narudzbenice,$id_proizvod, $kol, $iznos)
+    {   
+        $this->id_narudzbenice = $id_narudzbenice;
+        $this->proizvod   = $id_proizvod;
         $this->kolicina   = $kol;
         $this->iznos      = $iznos;
         
@@ -36,12 +37,26 @@ class StavkaNarudzbenice implements DomenskiObjekat
 		return "stavka_narudzbenice";
 	}
     public function napuni_objekte($result_set){
+        $objekti = array();
 
+        while($row = mysqli_fetch_assoc($result_set)){
+
+            $id_narudzbenice = $row['id_narudzbenice'];
+            $id_proizvoda = $row['id_proizvoda'];
+            $kolicina = $row['kolicina'];
+            $iznos = $row['iznos'];
+           
+            $obj = new StavkaNarudzbenice($id_narudzbenice,$id_proizvoda, $kolicina, $iznos);
+
+            array_push($objekti, $obj);
+        }
+        return $objekti;
     }
     
     public function vrati_uslov_za_nadji_slog(){
     }
     public function vrati_uslov_za_nadji_slogove(){
+        return $this->uslov;
     }
     public function vrati_uslov_za_prebroj_sve(){
       
@@ -49,6 +64,7 @@ class StavkaNarudzbenice implements DomenskiObjekat
     public function postavi_uslov_za_nadji_slog($uslov){
     }
     public function postavi_uslov_za_nadji_slogove($uslov){
+        $this->uslov = " id_narudzbenice = {$uslov}";
     }
     public function postavi_uslov_za_prebroj_sve($uslov){
       

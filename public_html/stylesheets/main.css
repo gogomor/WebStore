@@ -126,7 +126,7 @@ ul {
     padding-top:0;
     margin-top:0;
 }
-#formLogin, #formRegistracija, #formNarudzbenica {
+#formLogin, #formRegistracija, .formNarudzbenica {
 
     border-radius: 5px;
     background-color: #f2f2f2;
@@ -138,7 +138,7 @@ ul {
 
 }
 #formLogin input[type=text],#formLogin input[type=password],#formRegistracija input[type=text],
-#formRegistracija input[type=password],#formNarudzbenica input[type=text],#formNarudzbenica input[type=date] {
+#formRegistracija input[type=password],.formNarudzbenica input[type=text],.formNarudzbenica input[type=date] {
     width: 100%;
     padding: 10px 18px;
     margin: 8px 0;
@@ -149,7 +149,7 @@ ul {
     font-size: 20px;
 }
 
-#formLogin input[type=submit],#formRegistracija input[type=submit], #formNarudzbenica input[type=submit] {
+#formLogin input[type=submit],#formRegistracija input[type=submit], .formNarudzbenica input[type=submit] {
     width: 50%;
     background-color: #4CAF50;
     color: white;
@@ -160,7 +160,7 @@ ul {
     cursor: pointer;
     font-size: 20px;
 }
-#formNarudzbenica textarea{
+.formNarudzbenica textarea{
     width: 100%;
 }
 
@@ -305,7 +305,7 @@ h3,h2 {
     outline: none;
 }
 
-#tblKorpa, .tblNarudzbenice {
+.tblKorpa, .tblNarudzbenice {
     border-collapse: collapse;
     width: 50%;
     margin:0 auto;
@@ -314,14 +314,19 @@ h3,h2 {
     margin-bottom: 50px;
 }
 
-#tblKorpa th, #tblKorpa td, .tblNarudzbenice th, .tblNarudzbenice td {
+.tblKorpa th, .tblKorpa td, .tblNarudzbenice th, .tblNarudzbenice td {
     text-align: left;
     padding: 8px;
 }
+.tblKorpa tr:nth-child(even){
+    background-color: #f2f2f2;
+}
 
-#tblKorpa tr, .tblNarudzbenice tr:nth-child(even){background-color: #f2f2f2}
+.tblNarudzbenice tr:nth-child(even){
+    background-color: #f2f2f2;
+}
 
-#tblKorpa th, .tblNarudzbenice th {
+.tblKorpa th, .tblNarudzbenice th {
     background-color: #4CAF50;
     color: white;
 }
@@ -354,6 +359,11 @@ h3,h2 {
 }
 .hidden {
     visibility: hidden;
+}
+.puna {
+    
+    border:1px solid blue;
+    float: left;
 }
 
 
@@ -483,3 +493,45 @@ h3,h2 {
     color:#ff6863;
     
 }
+.punaKorpa {
+    margin:0 auto;
+    width: 40%;
+}
+
+.punaKorpa {
+    width: 50%;   
+    padding 0;
+}
+.punaKorpa table {
+    
+    width: 100%;
+    margin-top: 0;
+}
+.tblKorpa tr:last-child {
+    background: orange;
+}
+
+
+.puna_narudzbenica {
+    display: block;
+    margin:0 auto;
+}
+.infoNar{
+    width: 50%;
+    margin:0 auto;
+    margin-bottom: 50px;
+    margin-top: 50px;
+    background-image: url('../images/imagePattern.jpg');
+
+}
+.infoNar h3{
+    text-align: left;
+    padding: 10px;
+    padding-left: 30px;
+    font-family: 'Poppins', sans-serif;
+}
+.infoNar span {
+    font-family: 'Lobster Two', cursive;
+    font-size: 25px;
+}
+

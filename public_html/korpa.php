@@ -32,7 +32,7 @@ if (isset($_GET['id'])) {
 
 <!--TABELA PROIZVODA U KORPI -->
 <div class="divKorpaTabela">
-<table id="tblKorpa" <?php if (empty($stavke)) {echo "style=\"visibility: hidden\"";}?>>
+<table class="tblKorpa" <?php if (empty($stavke)) {echo "style=\"visibility: hidden\"";}?>>
     <tr>
         <th>Ime proizvoda</th>
         <th>Slika</th>
@@ -71,10 +71,16 @@ if ($stavke) {
     }
 }
 ?>
+<tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td>Ukupno:</td>
+    <td><?php echo $_SESSION['korpa'] . " .din"; ?></td>
+    <td></td>
 
+</tr>
 </table>
-
-<?php if (!empty($stavke)) echo "<h3>Ukupan iznos korpe je:<br> {$_SESSION['korpa']} din.</h3><br><br>"; ?>
 
     <form action="narudzbenica.php">
         <input type="submit" value="Naruči" class="dugme" <?php if (empty($stavke)) {

@@ -52,6 +52,21 @@ class Controller {
         $n->postavi_uslov_za_nadji_slogove($id);
         return $this->db->vrati_objekte($n);
     }
+    public function vrati_stavke_narudzbenice($id){
+        $stavka = new StavkaNarudzbenice();
+        $stavka->postavi_uslov_za_nadji_slogove($id);
+        $stavke = $this->db->vrati_objekte($stavka);
+
+        foreach ($stavke as $st) {
+        $proizvod = new Proizvod();
+        $proizvod->id = $st->proizvod;
+        $obj_proizvod = $this->vrati_objekat_preko_id($proizvod);
+        $st->proizvod = $obj_proizvod;      
+     } 
+     return $stavke;
+    }
+
+
     public function prebroj_sve_u_kategoriji($kategorija){
         return $this->db->prebroj_sve_u_kategoriji($kategorija);
     } 

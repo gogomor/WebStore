@@ -4,10 +4,12 @@
     <meta charset="utf-8">
     <title>Document</title>
     <link href="font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" media="all">
-    <link href='https://fonts.googleapis.com/css?family=Abril+Fatface' rel='stylesheet' type='text/css'>
+    <!-- <link href='https://fonts.googleapis.com/css?family=Abril+Fatface' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Happy+Monkey' rel='stylesheet' type='text/css'>
-    <link href="https://fonts.googleapis.com/css?family=Arima+Madurai" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Arima+Madurai" rel="stylesheet">  -->
+    <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Happy+Monkey|Arima+Madurai|Anton|Fjalla+One|Noto+Sans|Play|Playfair+Display|Poppins|Lobster Two" rel="stylesheet">  
     <link href="stylesheets/main.css" media="all" rel="stylesheet" type="text/css" />
+
 </head>
 <body>
 <div class="page-wrap">
