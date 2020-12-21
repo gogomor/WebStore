@@ -4,8 +4,12 @@
 
 
 html, body {
-    background-color: rgba(210, 215, 103, 1);
+    /*background-color: rgba(210, 215, 103, 1);*/
     height: 100%;
+
+}
+body {
+    background: url('../images/wall2.jpeg');
 
 }
 .page-wrap {
@@ -23,13 +27,13 @@ html, body {
 }
 .site-footer{
     text-align: center;
-    background-color: cornsilk;
+    background-color: rgba(255,255,255,.4);
 }
 #header {
     padding:0;
-    background-color: cornsilk;
+    background-color: rgba(255,255,255,.4);
     height: 50px;
-
+    
 }
 /*#footer {
     margin-top:30px;
@@ -187,6 +191,7 @@ h3,h2 {
     padding-top: 10px;
     padding-bottom: 50px;
     margin-bottom: 20px;
+    
     
 }
 #divProizvod {
@@ -467,7 +472,7 @@ h3,h2 {
 
 /* Change the link color to #111 (black) on hover */
 .headerLista li a:hover {
-    background-color: #89c403;
+    background-color: rgba(0,0,0,.3);
     color:white;
 
 }

@@ -2,8 +2,10 @@
 
 //definisanje putanja
 defined('DS') ? null : define('DS',DIRECTORY_SEPARATOR);
-//define('SITE_ROOT','/home/u931191961'.DS.'public_html'); 
-define('SITE_ROOT', 'C:'.DS.'wamp64'.DS.'www'.DS.'WebStore'.DS.'public_html'); 
+//define('SITE_ROOT','/home'.DS.'u931191961'.DS.'public_html'); 
+define('SITE_ROOT', 'C:'.DS.'xampp'.DS.'htdocs'.DS.'WebStore'.DS.'public_html');
+//putanja za wamp: define('SITE_ROOT', 'C:'.DS.'wamp64'.DS.'www'.DS.'WebStore'.DS.'public_html'); 
+//putanja za xampp: C:\xampp2\htdocs\dashboard\WebStore\public_html
 //define('SITE_ROOT','/storage/h2/072/647072'.DS.'public_html');
 defined('INCL_PATH') ? null : define('INCL_PATH', SITE_ROOT.DS.'includes');
 defined('MODEL_PATH') ? null : define('MODEL_PATH', SITE_ROOT.DS.'model');
